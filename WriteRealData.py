@@ -1,5 +1,4 @@
-#!/usr/bin/python
-
+#!/usr/bin/env python
 # Writes data from a L3GD20 3-axis gyro to a text file on a Raspberry Pi
 # Uses the Gyro-L3GD20-Python library by mpolaczyk
 # https://github.com/mpolaczyk/Gyro-L3GD20-Python
@@ -13,7 +12,7 @@ from L3GD20 import L3GD20
 import time
 
 # Communication object
-s = L3GD20(busId = 1, slaveAddr = 0x6b, ifLog = False, ifWriteBlock=False)
+s = L3GD20(busId = 1, slaveAddr = 0x6a, ifLog = False, ifWriteBlock=False)
 
 # Preconfiguration
 s.Set_PowerMode("Normal")
@@ -27,7 +26,7 @@ s.Init()
 s.Calibrate()
 
 # Print to file
-filename = raw_input("Enter the filename of the output file:")
+filename = raw_input("Enter the filename of the output file: ")
 filename += '.txt'
 
 
@@ -47,7 +46,8 @@ while 1==1:
 	# File I/O is left in loop. 
 	# Alternative implementation: 
 	# 	have loop go over a set number of iterations, put file.close() after
-	file = open(filename,'w')
+	file = open(filename,'a')
+	printstr += '\n'
 	file.write(printstr)
 	file.close()
 
