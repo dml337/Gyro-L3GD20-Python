@@ -30,22 +30,16 @@ filename = raw_input("Enter the filename of the output file: ")
 filename += '.txt'
 
 
-# Calculate angle
-dt = 0.02
-x = 0
-y = 0
-z = 0
+# Get angular rate data
 while 1==1:
 	time.sleep(dt)
 	dxyz = s.Get_CalOut_Value()
-	x += dxyz[0]*dt;
-	y += dxyz[1]*dt;
-	z += dxyz[2]*dt;
+	x = dxyz[0]
+	y = dxyz[1]
+	z = dxyz[2]
 	printstr = "{:7.2f} {:7.2f} {:7.2f}".format(x, y, z)
 	print(printstr)
-	# File I/O is left in loop. 
-	# Alternative implementation: 
-	# 	have loop go over a set number of iterations, put file.close() after
+	# File I/O is done in loop. 
 	file = open(filename,'a')
 	printstr += '\n'
 	file.write(printstr)
