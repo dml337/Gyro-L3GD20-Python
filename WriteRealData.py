@@ -31,7 +31,10 @@ s.Calibrate()
 filename = raw_input("Enter the filename of the output file: ")
 filename += '.txt'
 
-dt = 0.02
+#dt = 0.02
+
+dt = 0.01
+
 # Get angular rate data
 while 1==1:
 	time.sleep(dt)
