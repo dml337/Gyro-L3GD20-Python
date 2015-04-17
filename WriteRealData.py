@@ -33,7 +33,7 @@ s.Calibrate()
 
 filename = 'Tests.txt'
 file = open(filename,'a')
-datestr = 'Test ' + time.strftime("%c") + '\n'
+datestr = '#Test ' + time.strftime("%c") + '\n'
 file.write(datestr)
 file.close()
 
