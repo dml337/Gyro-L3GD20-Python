@@ -28,8 +28,14 @@ s.Init()
 s.Calibrate()
 
 # Print to file
-filename = raw_input("Enter the filename of the output file: ")
-filename += '.txt'
+# filename = raw_input("Enter the filename of the output file: ")
+#filename += '.txt'
+
+filename = 'Tests.txt'
+file = open(filename,'a')
+datestr = 'Test ' + time.strftime("%c") + '\n'
+file.write(datestr)
+file.close()
 
 #dt = 0.02
 
