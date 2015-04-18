@@ -31,11 +31,10 @@ s.Calibrate()
 # filename = raw_input("Enter the filename of the output file: ")
 #filename += '.txt'
 
-filename = 'Tests.txt'
-file = open(filename,'a')
-datestr = '#Test ' + time.strftime("%c") + '\n'
-file.write(datestr)
-file.close()
+#filename = 'Tests.txt'
+#file = open(filename,'a')
+datestr = '#Test ' + time.strftime("%c")
+filename = datestr
 
 #dt = 0.02
 
