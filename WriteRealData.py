@@ -34,7 +34,7 @@ s.Calibrate()
 #filename = 'Tests.txt'
 #file = open(filename,'a')
 datestr = 'Test ' + time.strftime("%c")
-datestr = 'Test_' + time.strftime("%d_%b_%Y_%H:%M:%S", time.gmtime())
+datestr = 'Test_' + time.strftime("%d_%b_%Y_%H:%M:%S", time.localtime())
 filename = datestr
 
 #dt = 0.02
