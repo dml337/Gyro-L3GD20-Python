@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 filename = sys.argv[1]
 
-t, x, y, z = np.loadtxt(filename)
+t, x, y, z = np.loadtxt(filename, unpack=True)
 #print np.loadtxt(filename)
 #x, y, z = np.loadtxt(filename, unpack=True)
 
