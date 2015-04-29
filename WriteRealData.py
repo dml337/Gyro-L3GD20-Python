@@ -49,7 +49,7 @@ while 1==1:
 	x = dxyz[0]
 	y = dxyz[1]
 	z = dxyz[2]
-	printstr = "{:7.2f} {:7.2f} {:7.2f} {:7.2f}".format(t, x, y, z)
+	printstr = "{: f} {: f} {: f} {: f}".format(t, x, y, z)
 	print(printstr)
 	# File I/O is done in loop. 
 	file = open(filename,'a')
