@@ -3,7 +3,7 @@
 # Takes data from a text file and plots it
 # NOTE: basic version does not use test timestamps / labels
 
-#import sys
+import sys
 import numpy as np
 import matplotlib.pyplot as plt 
 import Tkinter, tkFileDialog
@@ -11,10 +11,15 @@ import Tkinter, tkFileDialog
 root = Tkinter.Tk()
 root.withdraw()
 
-#filename = sys.argv[1]
-read_file_path = tkFileDialog.askopenfilename()
+#arg = sys.argv[1]
+
+if (len(sys.argv)<2):
+	read_file_path = tkFileDialog.askopenfilename()
+else:
+	read_file_path = sys.argv[1]
 
 t, x, y, z = np.loadtxt(read_file_path, unpack=True)
+
 #print np.loadtxt(filename)
 #x, y, z = np.loadtxt(filename, unpack=True)
 
