@@ -3,19 +3,23 @@
 # Takes data from a text file and plots it
 # NOTE: basic version does not use test timestamps / labels
 
-import sys
-# from pylab import *
+#import sys
 import numpy as np
 import matplotlib.pyplot as plt 
+import Tkinter, tkFileDialog
 
-filename = sys.argv[1]
+root = Tkinter.Tk()
+root.withdraw()
 
-t, x, y, z = np.loadtxt(filename, unpack=True)
+#filename = sys.argv[1]
+read_file_path = tkFileDialog.askopenfilename()
+
+t, x, y, z = np.loadtxt(read_file_path, unpack=True)
 #print np.loadtxt(filename)
 #x, y, z = np.loadtxt(filename, unpack=True)
 
-tstep = 0.02
-t = tstep*np.linspace(0, len(x), len(x))
+# tstep = 0.02
+# t = tstep*np.linspace(0, len(x), len(x))
 
 plt.subplot(3,1,1)
 plt.plot(t,x,'r-')
