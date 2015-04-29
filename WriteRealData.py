@@ -11,7 +11,7 @@ from L3GD20 import L3GD20
 
 import time
 
-tstart = time.clock()
+tstart = time.time()
 
 # Communication object
 s = L3GD20(busId = 1, slaveAddr = 0x6a, ifLog = False, ifWriteBlock=False)
@@ -45,11 +45,12 @@ dt = 0.01
 while 1==1:
 	time.sleep(dt)
 	dxyz = s.Get_CalOut_Value()
-	t = time.clock() - tstart
+	tclock = time.clock() - tstart
+	ttime = time.time() - tstart
 	x = dxyz[0]
 	y = dxyz[1]
 	z = dxyz[2]
-	printstr = "{: f} {: f} {: f} {: f}".format(t, x, y, z)
+	printstr = "{: f} {: f} {: f} {: f} {: f}".format(tclock, ttime, x, y, z)
 	print(printstr)
 	# File I/O is done in loop. 
 	file = open(filename,'a')
