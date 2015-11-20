@@ -1,4 +1,4 @@
-Gyro-L3GD20-Python
+Pi_L3GD20 (Gyro-L3GD20-Python)
 ==================
 
 Complete python library created to communicate with L3GD20 3 channel gyroscope through I2C bus.
